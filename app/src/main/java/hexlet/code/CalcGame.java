@@ -13,8 +13,8 @@ public class CalcGame {
 
 
     for (int i = 0; i <= 2; i++){
-        int op1 = random.nextInt(50);        //first operator
-        int op2 = random.nextInt(50);        //second operator
+        int op1 = random.nextInt(12);        //first operator
+        int op2 = random.nextInt(12);        //second operator
         int operator = random.nextInt(3);    //operand
         String operatorChar;                        //operand character
         int res;                                    //result
