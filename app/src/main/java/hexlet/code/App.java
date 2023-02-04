@@ -8,15 +8,16 @@ public class App {
 
         System.out.println("Please Enter the game number and press Enter,");
         System.out.println("1 - Greet");
+        System.out.println("2 - Even");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
+        String usrName = "";
         int choice = gameNum.nextInt();
         if (choice == 1) {
-            System.out.println("Welcome to the Brain Games!");
-            String usrName = Cli.greeting();
-        }
-        else {
-            System.out.println("Bye!");
-        }
+            usrName = Cli.greeting();
+        } else if (choice == 2) {
+            usrName = Cli.greeting();
+            EvenGame.evenGame(usrName);
+        } else System.out.println("Bye!");
     }
 }
