@@ -2,6 +2,10 @@ plugins {
     id 'java'
     id 'application'
 }
+compileJava {
+    options.release = 17
+}
+
 group 'hexlet.code'
 version '1.0-SNAPSHOT'
 application {
