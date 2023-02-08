@@ -1,47 +1,49 @@
 package hexlet.code.games;
 
 import java.util.Random;
-import java.util.Scanner;
 
 import static java.lang.System.out;
 
+
 public class CalcGame {
-    public static void calcGame(String userName){
-    out.println("What is the result of the expression?");
-    Random random = new Random();
-    Scanner ans = new Scanner(System.in);
 
+    public static class Equation {
+        public int op1;
+        public int op2;
+        public int res;
+        public String opSymbol;
 
-    for (int i = 0; i <= 2; i++){
-        int op1 = random.nextInt(12);        //first operator
-        int op2 = random.nextInt(12);        //second operator
-        int operator = random.nextInt(3);    //operand
-        String operatorChar;                        //operand character
-        int res;                                    //result
-        String usrAns;                              //user answer
-        if (operator == 0) {
-            operatorChar = "+";
-            res = op1 + op2;
-        } else if (operator == 1) {
-            operatorChar = "-";
-            res = op1 - op2;
-        } else {
-            operatorChar = "*";
-            res = op1 * op2;
+        public Equation (int op1, int op2, int res, String opSymbol) {
+            this.op1 = op1;
+            this.op2 = op2;
+            this.opSymbol = opSymbol;
+            this.res = res;
         }
-        out.println("Question: " + op1 + operatorChar + op2);
-        out.print("Your answer: ");
-        usrAns = ans.next();
-        if (usrAns.equals(Integer.toString(res))) {
-            out.println("Correct!");
-            out.println(" ");
-        }else {
-            out.println("'" + usrAns + "'" + "is wrong answer :(. Correct answer was '" + res + "'.");
-            out.println("Let's try again, " + userName);
-            return;
-        }
-
     }
-        out.println("Congratulations, " + userName);
+
+    public static void greetMsg() {
+        out.println("What is the result of the expression?");
+    }
+
+    public static Equation getRnd() {
+
+        Random random = new Random();
+        int op1 = random.nextInt(12);        //first operand
+        int op2 = random.nextInt(12);        //second operand
+        int operator = random.nextInt(3);    //operator
+        int res = 0;                               //result
+        String operatorSym = null;                 //operator Symbol
+        switch (operator) {
+            case (0) -> {
+                operatorSym = "+";
+                res = op1 + op2;
+            }
+            case (1) -> {
+                operatorSym = "-";
+                res = op1 - op2;
+            }
+            case (2) -> operatorSym = "*";
+        }
+        return new Equation(op1, op2, res, operatorSym);
     }
 }
