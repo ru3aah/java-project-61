@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.CalcGame;
 import hexlet.code.games.EvenGame;
+import hexlet.code.games.NodGame;
 
 import java.util.Objects;
 import java.util.Scanner;
@@ -25,6 +26,8 @@ public class Engine {
                     EvenGame.greetMsg();
             case (3) -> //CalcGame
                     CalcGame.greetMsg();
+            case (4) -> //NodGame
+                    NodGame.greetMsg();
         }
         //make turns
         String question = null; // a string to be printed out after "Question: "
@@ -36,18 +39,26 @@ public class Engine {
             //generate random question and define a correctAnswer
             switch (gameNum) {
                 case (2) -> { //EvenGame
-                    int rnd = EvenGame.genRnd();
-                    corAns = EvenGame.corAns(rnd);
-                    question = String.valueOf(rnd);
+                    int rnd = EvenGame.genRnd();  //generate random value
+                    corAns = EvenGame.corAns(rnd);  //define the correct answer
+                    question = String.valueOf(rnd); //create question string
                 }
                 case (3) -> { //CalcGame
                     CalcGame.Equation rnd = CalcGame.getRnd();  //Generate new random equation
-                    int op1 = getOp1(rnd);
-                    int op2 = CalcGame.Equation.getOp2(rnd);
-                    int res = CalcGame.Equation.getRes(rnd);
-                    String opSymbol = CalcGame.Equation.getOpSym(rnd);
-                    corAns = String.valueOf(res);
-                    question = op1 + opSymbol + op2;
+                    int op1 = getOp1(rnd);                      //get 1st operand
+                    int op2 = CalcGame.Equation.getOp2(rnd);    //get 2nd operand
+                    int res = CalcGame.Equation.getRes(rnd);    //get result
+                    String opSymbol = CalcGame.Equation.getOpSym(rnd); //get op Symbol
+                    corAns = String.valueOf(res);                   //convert res to String
+                    question = op1 + opSymbol + op2;                //create question to ask
+                }
+                case (4) -> {//Nod Game
+                    NodGame.Equation rnd = NodGame.getRnd(); //Generate values and calculate NOD
+                    int val1 = NodGame.Equation.getVal1(rnd); //Get val 1 from equation
+                    int val2 = NodGame.Equation.getVal2(rnd); //Get val 2 from equation
+                    int nod = NodGame.Equation.getRes(rnd);   //Get NOD from equation
+                    corAns = String.valueOf(nod);             //convert NOD to String
+                    question = val1 + " and " + val2;         //create question to ask
                 }
             }
             //ask a question

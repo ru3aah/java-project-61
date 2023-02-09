@@ -21,7 +21,7 @@ public class CalcGame {
             this.opSymbol = opSymbol;
         }
         //Define getters for Equation class
-        public static int getOp1(Equation equation){
+        public static int getOp1(Equation equation) {
             return equation.op1;
         }
         public static int getOp2(Equation equation) {
