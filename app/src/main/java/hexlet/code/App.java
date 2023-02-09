@@ -18,6 +18,10 @@ public class App {
         out.print("Your choice: ");
         String usrName;
         int choice = gameNum.nextInt();
+        if (choice == 0) {
+            out.println("Buy!");
+            return;
+        }
         usrName = Cli.greeting();
         Engine.gameEngine(choice, usrName);
     }
