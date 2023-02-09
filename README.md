@@ -9,3 +9,7 @@ https://asciinema.org/a/CUjGKLVF7PJeR5LyvjStE2RIZ
 
 ### Asciinema for Calc gamr 
 https://asciinema.org/connect/4da6b249-89f4-4f44-a0e8-e8bb919a844b
+
+### Asciinema for Calc & Even games after adding Engine.java
+https://asciinema.org/a/Wi9aSekdHerfw9912pKmzKkBJ
+
