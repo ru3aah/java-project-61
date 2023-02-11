@@ -3,11 +3,12 @@ package hexlet.code;
 import hexlet.code.games.CalcGame;
 import hexlet.code.games.EvenGame;
 import hexlet.code.games.NodGame;
+import hexlet.code.games.Progression;
 
 import java.util.Objects;
 import java.util.Scanner;
 
-import static hexlet.code.games.CalcGame.Equation.*;
+import static hexlet.code.games.CalcGame.Equation.getOp1;
 import static java.lang.System.in;
 
 
@@ -28,11 +29,13 @@ public class Engine {
                     CalcGame.greetMsg();
             case (4) -> //NodGame
                     NodGame.greetMsg();
+            case (5) -> //ProgressionGame
+                    Progression.greetMsg();
         }
         //make turns
-        String question = null; // a string to be printed out after "Question: "
-        String corAns =  null; // correct answer
-        String usrAns;         // user's input
+        String question = ""; // a string to be printed out after "Question: "
+        String corAns = ""; // correct answer
+        String usrAns = "";         // user's input
         Scanner ans = new Scanner(in);
 
         for(int i = 0; i <=2; i++) {
@@ -59,6 +62,22 @@ public class Engine {
                     int nod = NodGame.Equation.getRes(rnd);   //Get NOD from equation
                     corAns = String.valueOf(nod);             //convert NOD to String
                     question = val1 + " and " + val2;         //create question to ask
+                }
+                case (5) -> { //Progression Game
+                    Progression.Progres rnd = Progression.getRnd(); //Generate new Progression
+                    corAns = String.valueOf(Progression.Progres.getHiddenVal(rnd)); //get correct Answer
+
+                    //create a question String with progression and .. instead of hidden
+                    question = "";
+                    int tmp = 0;
+                    for (int j = 0; j < Progression.Progres.getLen(rnd); j++) {
+                        tmp = Progression.Progres.getFirstVal(rnd) + Progression.Progres.getStep(rnd) * j;
+                        if (j == Progression.Progres.getHidden(rnd)) {
+                            question = question + ".. ";
+                        } else {
+                        question = question + tmp + " ";
+                        }
+                    }
                 }
             }
             //ask a question

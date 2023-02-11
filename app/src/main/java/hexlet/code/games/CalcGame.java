@@ -1,10 +1,6 @@
 package hexlet.code.games;
-
 import java.util.Random;
-
 import static java.lang.System.out;
-
-
 public class CalcGame {
 
     // define a class for equation components

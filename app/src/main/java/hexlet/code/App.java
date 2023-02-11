@@ -15,6 +15,7 @@ public class App {
         out.println("2 - Even");
         out.println("3 - Calc");
         out.println("4 - NOD");
+        out.println("5 - Progression");
         out.println("0 - Exit");
         out.print("Your choice: ");
         String usrName;

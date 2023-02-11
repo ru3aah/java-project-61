@@ -16,3 +16,6 @@ https://asciinema.org/a/Wi9aSekdHerfw9912pKmzKkBJ
 ### Asciinema for NOD Game 
 https://asciinema.org/a/Qon5QXdrrrAmxmZOAH7xPbhV8
 
+### Asciinema for Progression Game
+https://asciinema.org/a/Qon5QXdrrrAmxmZOAH7xPbhV8
+
