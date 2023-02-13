@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.CalcGame;
-import hexlet.code.games.EvenGame;
-import hexlet.code.games.NodGame;
-import hexlet.code.games.Progression;
+import hexlet.code.games.*;
 
 import java.util.Objects;
 import java.util.Scanner;
@@ -79,6 +76,12 @@ public class Engine {
                         }
                     }
                 }
+                case (6) -> {//Prime Game
+                    int rnd = PrimeGame.getRnd(); //generate random int
+                    corAns = PrimeGame.corAns(rnd); //define the correct answer
+                    question = String.valueOf(rnd); //create question string
+
+                }
             }
             //ask a question
             System.out.println("Question: " + question);
@@ -96,11 +99,11 @@ public class Engine {
                 System.out.println("Let's try again, " + usrName);
                 return;
             }
-            //if not kicked out than then usrAnsw is correct - congrat and make next turn
+            //if not kicked than then usrAnsw is correct - congrat and make next turn
                 System.out.println("Correct!");
                 System.out.println();
         }
-        // all turns successfull - congrat and get out
+        // all turns were successfull - congrat and get out
         System.out.println("Congratulations, " + usrName);
     }
 }
