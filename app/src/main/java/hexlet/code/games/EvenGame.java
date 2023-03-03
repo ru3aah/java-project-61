@@ -6,6 +6,8 @@ import static java.lang.System.out;
 
 public class EvenGame {
 
+
+
     public static void greetMsg() {
         out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         out.println("Question: 15");
@@ -27,6 +29,16 @@ public class EvenGame {
         } else {
             return "no";
         }
+    }
+    public static String[][] game() {
+        EvenGame.greetMsg();
+        String[][] questionAnswer = new String[2][3];
+        for (int z = 0; z < 3; z++) {
+            int rnd = EvenGame.genRnd();
+            questionAnswer[1][z] = EvenGame.corAns(rnd);
+            questionAnswer[0][z] = String.valueOf(rnd);
+        }
+        return questionAnswer;
     }
 }
 

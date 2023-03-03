@@ -22,3 +22,6 @@ https://asciinema.org/a/Qon5QXdrrrAmxmZOAH7xPbhV8
 ### Asciinema for Prime Game
  https://asciinema.org/a/xehjPkm4whP5RhqANBT3fq71k
 
+### Asciinema for rebuit game
+
+https://asciinema.org/a/tOPWaPRU3Wzdzjg7SyHELZ6K8

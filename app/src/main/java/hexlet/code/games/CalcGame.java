@@ -1,5 +1,7 @@
 package hexlet.code.games;
 import java.util.Random;
+
+import static hexlet.code.games.CalcGame.Equation.getOp1;
 import static java.lang.System.out;
 public class CalcGame {
 
@@ -61,4 +63,21 @@ public class CalcGame {
         }
         return new Equation(op1, op2, res, operatorSym);
     }
+
+    public static String[][] game() {
+        CalcGame.greetMsg();
+        String[][] questionAnswer = new String[2][3];
+        for (int z = 0; z < 3; z++) {
+            CalcGame.Equation rnd = CalcGame.getRnd();  //Generate new random equation
+            int op1 = CalcGame.Equation.getOp1(rnd);    //get 1st operand
+            int op2 = CalcGame.Equation.getOp2(rnd);    //get 2nd operand
+            int res = CalcGame.Equation.getRes(rnd);    //get result
+            String opSymbol = CalcGame.Equation.getOpSym(rnd); //get op Symbol
+            questionAnswer[1][z] = String.valueOf(res);     //convert res to String
+            questionAnswer[0][z] = op1 + opSymbol + op2;    //create question to ask
+        }
+        return questionAnswer;
+    }
 }
+
+

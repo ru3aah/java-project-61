@@ -24,5 +24,15 @@ public class PrimeGame {
         }
         return "yes";
     }
+    public static String[][] game() {
+        greetMsg();
+        String[][] questionAnswer = new String[2][3];
+        for (int z = 0; z < 3; z++) {
+            int rnd = PrimeGame.getRnd();
+            questionAnswer[1][z] = PrimeGame.corAns(rnd);
+            questionAnswer[0][z] = String.valueOf(rnd);
+        }
+        return questionAnswer;
+    }
 
 }
