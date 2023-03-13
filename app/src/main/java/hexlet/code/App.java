@@ -6,8 +6,10 @@ import static java.lang.System.in;
 import static java.lang.System.out;
 
 public class App {
+    public static int roundQty =3; //rounds quantity in below games
     public static void main(String[] args) {
         Scanner gameNum = new Scanner(in);
+        Integer roundQty = 3;
         out.println("Please Enter the game number and press Enter,");
         out.println("1 - Greet");
         out.println("2 - Even");
@@ -18,24 +20,17 @@ public class App {
         out.println("0 - Exit");
         out.print("Your choice: ");
         int choice = gameNum.nextInt();
-        if (choice == 0) {
-            out.println("Good buy!");
-            return;
-        }
-        String usrName = Cli.greeting();
         switch (choice) {
-            case (1) -> //Greeting
+            case (0) -> System.out.println("Good buy!");
+            case (1) -> {
+                Cli.greeting();
                 System.out.println("Good bye!");
-            case (2) -> //EvenGame
-                Engine.gameEngine(EvenGame.game(), usrName);
-            case (3) -> //CalcGame
-                Engine.gameEngine(CalcGame.game(), usrName);
-            case (4) -> //NodGame
-                Engine.gameEngine(NodGame.game(), usrName);
-            case (5) -> //ProgressionGame
-                Engine.gameEngine(Progression.game(), usrName);
-            case (6) -> //Prime Game
-                Engine.gameEngine(PrimeGame.game(), usrName);
+            }
+            case (2) -> Engine.gameEngine(EvenGame.game(), Cli.greeting());
+            case (3) -> Engine.gameEngine(CalcGame.game(), Cli.greeting());
+            case (4) -> Engine.gameEngine(NodGame.game(), Cli.greeting());
+            case (5) -> Engine.gameEngine(Progression.game(), Cli.greeting());
+            case (6) -> Engine.gameEngine(PrimeGame.game(), Cli.greeting());
         }
     }
 }
