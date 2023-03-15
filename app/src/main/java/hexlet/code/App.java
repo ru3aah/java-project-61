@@ -12,12 +12,12 @@ import static java.lang.System.out;
 
 public class App {
 
-    private static final int roundQty;
+    private static final int ROUND_QTY;
            public static int getRoundQty() {
-        return roundQty;
+        return ROUND_QTY;
     }
     static {
-        roundQty = 3; //rounds qty in below games
+        ROUND_QTY = 3; //rounds qty in below games
     }
     public static void main(String[] args) {
         Scanner gameNum = new Scanner(in);
