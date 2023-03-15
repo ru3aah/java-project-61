@@ -40,23 +40,23 @@ public class CalcGame {
     //get new equation using random generator
     public static Equation getRnd() {
         Random random = new Random();
-        int op1 = random.nextInt(12);        //first operand
-        int op2 = random.nextInt(12);        //second operand
-        int operator = random.nextInt(3);    //operator
-        int res = 0;                               //result
-        String operatorSym = null;                 //operator Symbol
+        int op1 = random.nextInt(12);
+        int op2 = random.nextInt(12);
+        int operator = random.nextInt(3);
+        int res = 0;
+        String operatorSym = null;
         //define operator
         switch (operator) {
             case (0) -> {
-                operatorSym = "+";
+                operatorSym = " + ";
                 res = op1 + op2;
             }
             case (1) -> {
-                operatorSym = "-";
+                operatorSym = " - ";
                 res = op1 - op2;
             }
             case (2) -> {
-                operatorSym = "*";
+                operatorSym = " * ";
                 res = op1 * op2;
             }
 
