@@ -57,12 +57,12 @@ public class NodGame {
         NodGame.greetMsg();
         String[][] questionAnswer = new String[2][3];
        for (int z = 0; z < 3; z++) {
-           NodGame.Equation rnd = NodGame.getRnd();   //Generate values and calculate NOD
-           int val1 = NodGame.Equation.getVal1(rnd); //Get val 1 from equation
-           int val2 = NodGame.Equation.getVal2(rnd); //Get val 2 from equation
-           int nod = NodGame.Equation.getRes(rnd);   //Get NOD from equation
-           questionAnswer[0][z] = val1 + " and " + val2;         //create question to ask
-           questionAnswer[1][z] = String.valueOf(nod);   //convert NOD to String
+           NodGame.Equation rnd = NodGame.getRnd();
+           int val1 = NodGame.Equation.getVal1(rnd);
+           int val2 = NodGame.Equation.getVal2(rnd);
+           int nod = NodGame.Equation.getRes(rnd);
+           questionAnswer[0][z] = val1 + " " + val2;
+           questionAnswer[1][z] = String.valueOf(nod);
        }
         return questionAnswer;
     }
