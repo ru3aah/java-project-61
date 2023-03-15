@@ -8,7 +8,7 @@ public class Engine {
 
     public static void gameEngine(String[][] questionAnswer, String usrName) {
         Scanner ans = new Scanner(in);
-        for(int i = 0; i < App.roundQty; i++) {
+        for(int i = 0; i < App.getRoundQty(); i++) {
             System.out.println("Question: " + questionAnswer[0][i]);
             System.out.print("Answer: ");
             String usrAns = ans.next();

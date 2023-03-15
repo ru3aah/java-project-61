@@ -1,15 +1,25 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.CalcGame;
+import hexlet.code.games.PrimeGame;
+import hexlet.code.games.EvenGame;
+import hexlet.code.games.NodGame;
+import hexlet.code.games.Progression;
+
 import java.util.Scanner;
 import static java.lang.System.in;
 import static java.lang.System.out;
 
 public class App {
-    public static int roundQty =3; //rounds quantity in below games
+   static int roundQty; //rounds quantity in below games
+    public static int getRoundQty() {
+        return roundQty;
+    }
+    static {
+        roundQty = 3;
+    }
     public static void main(String[] args) {
         Scanner gameNum = new Scanner(in);
-        Integer roundQty = 3;
         out.println("Please Enter the game number and press Enter,");
         out.println("1 - Greet");
         out.println("2 - Even");
