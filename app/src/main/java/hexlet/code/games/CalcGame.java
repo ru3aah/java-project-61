@@ -1,21 +1,20 @@
 package hexlet.code.games;
 import java.util.Random;
 
-import static hexlet.code.games.CalcGame.Equation.getOp1;
 import static java.lang.System.out;
 public class CalcGame {
 
     // define a class for equation components
     public static class Equation {
-        final private int op1; //1st operand
-        final private int op2; //2nd operand
-        final private int res; //operation result
-        final private String opSymbol; // operator
+       private final int op1;
+        private final int op2;
+        private final int res;
+        private final String opSymbol;
 
-        public Equation (int op1, int op2, int res, String opSymbol) {
-            this.op1 = op1;
-            this.op2 = op2;
-            this.res = res;
+        public Equation(int opp1, int opp2, int ress, String opSymbol) {
+            this.op1 = opp1;
+            this.op2 = opp2;
+            this.res = ress;
             this.opSymbol = opSymbol;
         }
         //Define getters for Equation class
