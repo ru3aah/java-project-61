@@ -6,14 +6,14 @@ public class NodGame {
 
     //define a class for equation components
     public static class Equation {
-        final private int value1; //1st div
-        final private int value2; //2nd div
-        final private int nod;  //nod for 1st and 2nd divs
+        private final int value1;
+        private final int value2;
+        private final int nod;
 
-        public Equation (int value1, int value2, int nod) {
-            this.value1 = value1;
-            this.value2 = value2;
-            this.nod = nod;
+        public Equation(int val1, int val2, int nodd) {
+            this.value1 = val1;
+            this.value2 = val2;
+            this.nod = nodd;
         }
 
         //define getters for Equation class
@@ -44,8 +44,8 @@ public class NodGame {
         //calculate NOD using Evklid's method
         int a = val1;
         int b = val2;
-        while (b !=0) {
-            int tmp = a%b;
+        while (b != 0) {
+            int tmp = a % b;
             a = b;
             b = tmp;
         }

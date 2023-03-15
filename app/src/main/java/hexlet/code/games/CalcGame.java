@@ -11,11 +11,11 @@ public class CalcGame {
         private final int res;
         private final String opSymbol;
 
-        public Equation(int opp1, int opp2, int ress, String opSymbol) {
+        public Equation(int opp1, int opp2, int ress, String opSymboll) {
             this.op1 = opp1;
             this.op2 = opp2;
             this.res = ress;
-            this.opSymbol = opSymbol;
+            this.opSymbol = opSymboll;
         }
         //Define getters for Equation class
         public static int getOp1(Equation equation) {

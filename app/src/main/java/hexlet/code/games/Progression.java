@@ -5,20 +5,20 @@ import java.util.Random;
 public class Progression {
 
     public static class Progres {
-        final private int firstVal; //first in raw
-        final private int len; //progression length - 5 (5 is the least allowed)
-        final private int step; //progression step
-        final private int hidden; //hidden position
-        final private int hiddenVal; //hidden value
+        private final int firstVal;
+        private final int len;
+        private final int step;
+        private final int hidden;
+        private final int hiddenVal;
 
-        public Progres(int firstVal, int len, int step, int hidden, int hiddenVal) {
-            this.firstVal = firstVal;
-            this.len = len;
-            this.step = step;
-            this.hidden = hidden;
-            this.hiddenVal =hiddenVal;
+        public Progres(int firstVall, int lenn, int stepp, int hiddenn, int hiddenVall) {
+            this.firstVal = firstVall;
+            this.len = lenn;
+            this.step = stepp;
+            this.hidden = hiddenn;
+            this.hiddenVal = hiddenVall;
         }
-        //Define getters for Progres class
+
         public static int getFirstVal(Progres progres) {
             return progres.firstVal;
         }
@@ -40,19 +40,22 @@ public class Progression {
         int firstVal = random.nextInt(100);
         int len = random.nextInt(5, 11); // 5 <= len < 11
         int step = random.nextInt(1, 10);
-        int hidden = random.nextInt(0, len-1); // hidden position #
+        int hidden = random.nextInt(0, len - 1); // hidden position #
         int hiddenVal = firstVal + hidden * step; //hidden value at hidden position
         return new Progres(firstVal, len, step, hidden, hiddenVal);
     }
 
     //greeting msg for Progression Game
-    public static void greetMsg() {System.out.println("What number is missing in the progression");}
+    public static void greetMsg() {
+        System.out.println("What number is missing in the progression");
+    }
+
 
     public static String[][] game () {
         Progression.greetMsg();
 
         String[][] questionAnswer = new String[2][3];
-        for (int z = 0; z < 3; z++) {
+        for(int z = 0; z < 3; z++) {
             Progression.Progres rnd = Progression.getRnd(); //Generate new Progression
             questionAnswer[1][z] = String.valueOf(Progression.Progres.getHiddenVal(rnd)); //get correct Answer
 
