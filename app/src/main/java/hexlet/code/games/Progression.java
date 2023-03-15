@@ -46,7 +46,7 @@ public class Progression {
     }
 
     //greeting msg for Progression Game
-    public static void greetMsg() {System.out.println("Guess hidden figure");}
+    public static void greetMsg() {System.out.println("What number is missing in the progression");}
 
     public static String[][] game () {
         Progression.greetMsg();
