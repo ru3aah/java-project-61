@@ -14,7 +14,7 @@ public class Engine {
             String usrAns = ans.next();
             if (!(Objects.equals(questionAnswer[1][i], usrAns))) {
                 System.out.println("'" + usrAns + "' is wrong answer :(. Correct answer was '" + questionAnswer[1][i] + "'");
-                System.out.println("Let's try again, " + usrName);
+                System.out.println("Let's try again, " + usrName + "!");
                 return;
             }
                 System.out.println("Correct!");
