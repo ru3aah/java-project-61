@@ -11,8 +11,9 @@ import static java.lang.System.in;
 import static java.lang.System.out;
 
 public class App {
-   private static int roundQty;
-    public static int getRoundQty() {
+
+    private static final int roundQty;
+           public static int getRoundQty() {
         return roundQty;
     }
     static {
@@ -37,10 +38,10 @@ public class App {
                 System.out.println("Good bye!");
             }
             case (2) -> Engine.gameEngine(EvenGame.game(), Cli.greeting());
-            case (3) -> Engine.gameEngine(CalcGame.game(), Cli.greeting()); //3
-            case (4) -> Engine.gameEngine(NodGame.game(), Cli.greeting()); //4
-            case (5) -> Engine.gameEngine(Progression.game(), Cli.greeting()); //5
-            case (6) -> Engine.gameEngine(PrimeGame.game(), Cli.greeting());  //6
+            case (3) -> Engine.gameEngine(CalcGame.game(), Cli.greeting());
+            case (4) -> Engine.gameEngine(NodGame.game(), Cli.greeting());
+            case (5) -> Engine.gameEngine(Progression.game(), Cli.greeting());
+            case (6) -> Engine.gameEngine(PrimeGame.game(), Cli.greeting());
             default -> System.out.println("Good_buy!");
         }
     }
