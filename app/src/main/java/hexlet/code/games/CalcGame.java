@@ -58,6 +58,11 @@ public class CalcGame {
                 operatorSym = " * ";
                 res = op1 * op2;
             }
+            default -> {
+                operatorSym = " M ";
+                res = 0;
+            }
+
 
         }
         return new Equation(op1, op2, res, operatorSym);

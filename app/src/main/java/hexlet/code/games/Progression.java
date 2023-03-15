@@ -51,11 +51,11 @@ public class Progression {
     }
 
 
-    public static String[][] game () {
+    public static String[][] game() {
         Progression.greetMsg();
 
         String[][] questionAnswer = new String[2][3];
-        for(int z = 0; z < 3; z++) {
+        for (int z = 0; z < 3; z++) {
             Progression.Progres rnd = Progression.getRnd(); //Generate new Progression
             questionAnswer[1][z] = String.valueOf(Progression.Progres.getHiddenVal(rnd)); //get correct Answer
 

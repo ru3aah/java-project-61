@@ -20,8 +20,9 @@ public class PrimeGame {
         int tmp = 0;
         for (int j = 2; j <= rnd / 2;  j++) {
             tmp = rnd % j;
-            if (tmp == 0) { return "no"; }
-
+            if (tmp == 0) {
+                return "no";
+            }
         }
         return "yes";
     }
