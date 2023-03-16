@@ -17,6 +17,9 @@ public class App {
         public static final int RND_BOUND_CALC = 12; //upper bound for RND to avoid counting billions
         public static final int SIGN_BOUND_CALC = 3; //upper bound for RND for  op sign
         public static final int RND_BOUND_NOD = 50; //upper bound for RND in NOD game
+        public static final int RND_ORIGN_PRIME = 1; //RND RANGE beginning
+        public static final int RND_BOUND_PRIME = 1000; //RND RANGE BOUND
+
     }
 
 
