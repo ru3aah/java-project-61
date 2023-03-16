@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import java.util.Random;
-
+import hexlet.code.App.GameConst;
 public class NodGame {
 
     //define a class for equation components
@@ -38,8 +38,8 @@ public class NodGame {
     //Get new val 1&2 using random generator and calculate NOD for them
     public static Equation getRnd() {
         Random random = new Random();
-        int val1 = random.nextInt(50);
-        int val2 = random.nextInt(50);
+        int val1 = random.nextInt(GameConst.RND_BOUND_NOD);
+        int val2 = random.nextInt(GameConst.RND_BOUND_NOD);
 
         //calculate NOD using Evklid's method
         int a = val1;
@@ -56,7 +56,7 @@ public class NodGame {
     public static String[][] game() {
         NodGame.greetMsg();
         String[][] questionAnswer = new String[2][3];
-       for (int z = 0; z < 3; z++) {
+       for (int z = 0; z < GameConst.ROUND_QTY; z++) {
            NodGame.Equation rnd = NodGame.getRnd();
            int val1 = NodGame.Equation.getVal1(rnd);
            int val2 = NodGame.Equation.getVal2(rnd);

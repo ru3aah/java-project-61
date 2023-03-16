@@ -16,6 +16,7 @@ public class App {
         public static final int ROUND_QTY = 3; //game turns limit
         public static final int RND_BOUND_CALC = 12; //upper bound for RND to avoid counting billions
         public static final int SIGN_BOUND_CALC = 3; //upper bound for RND for  op sign
+        public static final int RND_BOUND_NOD = 50; //upper bound for RND in NOD game
     }
 
 

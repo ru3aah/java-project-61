@@ -71,14 +71,14 @@ public class CalcGame {
     public static String[][] game() {
         CalcGame.greetMsg();
         String[][] questionAnswer = new String[2][3];
-        for (int z = 0; z < 3; z++) {
-            CalcGame.Equation rnd = CalcGame.getRnd();  //Generate new random equation
-            int op1 = CalcGame.Equation.getOp1(rnd);    //get 1st operand
-            int op2 = CalcGame.Equation.getOp2(rnd);    //get 2nd operand
-            int res = CalcGame.Equation.getRes(rnd);    //get result
-            String opSymbol = CalcGame.Equation.getOpSym(rnd); //get op Symbol
-            questionAnswer[1][z] = String.valueOf(res);     //convert res to String
-            questionAnswer[0][z] = op1 + opSymbol + op2;    //create question to ask
+        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
+            CalcGame.Equation rnd = CalcGame.getRnd();
+            int op1 = CalcGame.Equation.getOp1(rnd);
+            int op2 = CalcGame.Equation.getOp2(rnd);
+            int res = CalcGame.Equation.getRes(rnd);
+            String opSymbol = CalcGame.Equation.getOpSym(rnd);
+            questionAnswer[1][z] = String.valueOf(res);
+            questionAnswer[0][z] = op1 + opSymbol + op2;    
         }
         return questionAnswer;
     }
