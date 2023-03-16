@@ -12,13 +12,15 @@ import static java.lang.System.out;
 
 public class App {
 
-    private static final int ROUND_QTY;
-           public static int getRoundQty() {
-        return ROUND_QTY;
+    public static final class GameConst {
+        public static final int ROUND_QTY = 3; //game turns limit
+        public static final int RND_BOUND_CALC = 12; //upper bound for RND to avoid counting billions
+        public static final int SIGN_BOUND_CALC = 3; //upper bound for RND for  op sign
     }
-    static {
-        ROUND_QTY = 3; //rounds qty in below games
-    }
+
+
+
+
     public static void main(String[] args) {
         Scanner gameNum = new Scanner(in);
         out.println("Please Enter the game number and press Enter,");

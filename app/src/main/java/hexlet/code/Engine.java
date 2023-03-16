@@ -1,5 +1,5 @@
 package hexlet.code;
-
+import hexlet.code.App.GameConst;
 import java.util.Objects;
 import java.util.Scanner;
 import static java.lang.System.in;
@@ -8,7 +8,7 @@ public class Engine {
 
     public static void gameEngine(String[][] questionAnswer, String usrName) {
         Scanner ans = new Scanner(in);
-        for (int i = 0; i < App.getRoundQty(); i++) {
+        for (int i = 0; i < GameConst.ROUND_QTY; i++) {
             System.out.println("Question: " + questionAnswer[0][i]);
             System.out.print("Answer: ");
             String usrAns = ans.next();

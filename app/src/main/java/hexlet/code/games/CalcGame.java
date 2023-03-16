@@ -1,4 +1,7 @@
 package hexlet.code.games;
+
+import hexlet.code.App.GameConst;
+
 import java.util.Random;
 
 import static java.lang.System.out;
@@ -39,9 +42,9 @@ public class CalcGame {
     //get new equation using random generator
     public static Equation getRnd() {
         Random random = new Random();
-        int op1 = random.nextInt(12);
-        int op2 = random.nextInt(12);
-        int operator = random.nextInt(3);
+        int op1 = random.nextInt(GameConst.RND_BOUND_CALC);
+        int op2 = random.nextInt(GameConst.RND_BOUND_CALC);
+        int operator = random.nextInt(GameConst.SIGN_BOUND_CALC);
         int res = 0;
         String operatorSym = null;
         //define operator
@@ -62,12 +65,9 @@ public class CalcGame {
                 operatorSym = " M ";
                 res = 0;
             }
-
-
         }
         return new Equation(op1, op2, res, operatorSym);
     }
-
     public static String[][] game() {
         CalcGame.greetMsg();
         String[][] questionAnswer = new String[2][3];
