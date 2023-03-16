@@ -30,18 +30,18 @@ public class App {
         out.println("6 - Prime");
         out.println("0 - Exit");
         out.print("Your choice: ");
-        int choice = gameNum.nextInt();
+        String choice = gameNum.next();
         switch (choice) {
-            case (0) -> System.out.println("Good buy!");
-            case (1) -> {
+            case ("0") -> System.out.println("Good buy!");
+            case ("1") -> {
                 Cli.greeting();
                 System.out.println("Good bye!");
             }
-            case (2) -> Engine.gameEngine(EvenGame.game(), Cli.greeting());
-            case (3) -> Engine.gameEngine(CalcGame.game(), Cli.greeting());
-            case (4) -> Engine.gameEngine(NodGame.game(), Cli.greeting());
-            case (5) -> Engine.gameEngine(Progression.game(), Cli.greeting());
-            case (6) -> Engine.gameEngine(PrimeGame.game(), Cli.greeting());
+            case ("2") -> Engine.gameEngine(EvenGame.game(), Cli.greeting());
+            case ("3") -> Engine.gameEngine(CalcGame.game(), Cli.greeting());
+            case ("4") -> Engine.gameEngine(NodGame.game(), Cli.greeting());
+            case ("5") -> Engine.gameEngine(Progression.game(), Cli.greeting());
+            case ("6") -> Engine.gameEngine(PrimeGame.game(), Cli.greeting());
             default -> System.out.println("Good_buy!");
         }
     }
