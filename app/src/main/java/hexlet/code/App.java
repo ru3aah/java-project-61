@@ -19,6 +19,13 @@ public class App {
         public static final int RND_BOUND_NOD = 50; //upper bound for RND in NOD game
         public static final int RND_ORIGN_PRIME = 1; //RND RANGE beginning
         public static final int RND_BOUND_PRIME = 1000; //RND RANGE BOUND
+        public static final int RND_BOUND_START_PROGR = 100; //RND bound for progression first value
+        public static final int RND_ORIGN_LEN_PROGR = 5; //RND orign for progression lenght
+        public static final int RND_BOUND_LEN_PROGR = 11; //RND bound for progression lenght
+        public static final int RND_ORIGN_STEP_PROGR = 1; //RND orign for progression step
+        public static final int RND_BOUND_STEP_PROGR = 10; //RND bound for progression step
+        public static final int RND_ORIGN_HID_POS_PROGR = 0; // RND orign for hidden position in progression
+
 
     }
 

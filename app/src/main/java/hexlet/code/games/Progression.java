@@ -1,9 +1,9 @@
 package hexlet.code.games;
 
 import java.util.Random;
+import hexlet.code.App.GameConst;
 
 public class Progression {
-
     public static class Progres {
         private final int firstVal;
         private final int len;
@@ -34,32 +34,24 @@ public class Progression {
         public static int getHiddenVal(Progres progres) {
             return progres.hiddenVal; }
     }
-    //generate new progression and randomly hide one figure in it
     public static Progres getRnd() {
         Random random = new Random();
-        int firstVal = random.nextInt(100);
-        int len = random.nextInt(5, 11); // 5 <= len < 11
-        int step = random.nextInt(1, 10);
-        int hidden = random.nextInt(0, len - 1); // hidden position #
-        int hiddenVal = firstVal + hidden * step; //hidden value at hidden position
+        int firstVal = random.nextInt(GameConst.RND_BOUND_START_PROGR);
+        int len = random.nextInt(GameConst.RND_ORIGN_LEN_PROGR, GameConst.RND_BOUND_LEN_PROGR);
+        int step = random.nextInt(GameConst.RND_ORIGN_STEP_PROGR, GameConst.RND_BOUND_STEP_PROGR);
+        int hidden = random.nextInt(GameConst.RND_ORIGN_HID_POS_PROGR, len - 1);
+        int hiddenVal = firstVal + hidden * step;
         return new Progres(firstVal, len, step, hidden, hiddenVal);
     }
-
-    //greeting msg for Progression Game
     public static void greetMsg() {
         System.out.println("What number is missing in the progression");
     }
-
-
     public static String[][] game() {
         Progression.greetMsg();
-
         String[][] questionAnswer = new String[2][3];
-        for (int z = 0; z < 3; z++) {
+        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
             Progression.Progres rnd = Progression.getRnd(); //Generate new Progression
             questionAnswer[1][z] = String.valueOf(Progression.Progres.getHiddenVal(rnd)); //get correct Answer
-
-            //create a question String with progression and .. instead of hidden
             String question = "";
             int tmp = 0;
             for (int j = 0; j < Progression.Progres.getLen(rnd); j++) {
