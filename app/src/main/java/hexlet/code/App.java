@@ -25,7 +25,7 @@ public class App {
         public static final int RND_ORIGN_STEP_PROGR = 1; //RND orign for progression step
         public static final int RND_BOUND_STEP_PROGR = 10; //RND bound for progression step
         public static final int RND_ORIGN_HID_POS_PROGR = 0; // RND orign for hidden position in progression
-
+        public static final int RND_BOUND_EVEN = 100; //RND bound for Even
 
     }
 

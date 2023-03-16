@@ -70,7 +70,7 @@ public class CalcGame {
     }
     public static String[][] game() {
         CalcGame.greetMsg();
-        String[][] questionAnswer = new String[2][3];
+        String[][] questionAnswer = new String[2][GameConst.ROUND_QTY];
         for (int z = 0; z < GameConst.ROUND_QTY; z++) {
             CalcGame.Equation rnd = CalcGame.getRnd();
             int op1 = CalcGame.Equation.getOp1(rnd);
@@ -78,7 +78,7 @@ public class CalcGame {
             int res = CalcGame.Equation.getRes(rnd);
             String opSymbol = CalcGame.Equation.getOpSym(rnd);
             questionAnswer[1][z] = String.valueOf(res);
-            questionAnswer[0][z] = op1 + opSymbol + op2;    
+            questionAnswer[0][z] = op1 + opSymbol + op2;
         }
         return questionAnswer;
     }

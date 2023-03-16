@@ -55,7 +55,7 @@ public class NodGame {
 
     public static String[][] game() {
         NodGame.greetMsg();
-        String[][] questionAnswer = new String[2][3];
+        String[][] questionAnswer = new String[2][GameConst.ROUND_QTY];
        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
            NodGame.Equation rnd = NodGame.getRnd();
            int val1 = NodGame.Equation.getVal1(rnd);

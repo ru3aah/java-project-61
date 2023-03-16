@@ -26,7 +26,7 @@ public class PrimeGame {
     }
     public static String[][] game() {
         greetMsg();
-        String[][] questionAnswer = new String[2][3];
+        String[][] questionAnswer = new String[2][GameConst.ROUND_QTY];
         for (int z = 0; z < GameConst.ROUND_QTY; z++) {
             int rnd = PrimeGame.getRnd();
             questionAnswer[1][z] = PrimeGame.corAns(rnd);

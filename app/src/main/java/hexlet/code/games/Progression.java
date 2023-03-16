@@ -48,7 +48,7 @@ public class Progression {
     }
     public static String[][] game() {
         Progression.greetMsg();
-        String[][] questionAnswer = new String[2][3];
+        String[][] questionAnswer = new String[2][GameConst.ROUND_QTY];
         for (int z = 0; z < GameConst.ROUND_QTY; z++) {
             Progression.Progres rnd = Progression.getRnd(); //Generate new Progression
             questionAnswer[1][z] = String.valueOf(Progression.Progres.getHiddenVal(rnd)); //get correct Answer
