@@ -18,7 +18,6 @@ public class EvenGame {
         Random random = new Random();
         return random.nextInt(GameConst.RND_BOUND_EVEN);
     }
-
     public static String corAns(int rnd) {
 
         if ((rnd % 2) == 0) {

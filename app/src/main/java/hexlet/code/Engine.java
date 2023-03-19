@@ -18,7 +18,7 @@ public class Engine {
                 System.out.println("Let's try again, " + usrName + "!");
                 return;
             }
-                System.out.println("Correct!" +"\n");
+                System.out.println("Correct!" + "\n");
 
         }
         System.out.println("Congratulations, " + usrName + "!");
