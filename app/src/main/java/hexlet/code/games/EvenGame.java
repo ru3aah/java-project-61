@@ -1,7 +1,8 @@
 package hexlet.code.games;
 
-import java.util.Random;
 import hexlet.code.App.GameConst;
+
+import java.util.Random;
 
 import static java.lang.System.out;
 
@@ -12,14 +13,15 @@ public class EvenGame {
         out.println("Your answer should be: no");
         out.println(" ");
     }
-     public static int genRnd() {
+
+    public static int genRnd() {
         Random random = new Random();
         return random.nextInt(GameConst.RND_BOUND_EVEN);
     }
 
     public static String corAns(int rnd) {
 
-        if ((rnd & 1) == 0) {
+        if ((rnd % 2) == 0) {
             return "yes";
         } else {
             return "no";

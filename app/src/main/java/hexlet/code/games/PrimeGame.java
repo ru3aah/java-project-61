@@ -1,7 +1,8 @@
 package hexlet.code.games;
 
-import java.util.Random;
 import hexlet.code.App.GameConst;
+
+import java.util.Random;
 
 public class PrimeGame {
     public static void greetMsg() {
@@ -24,15 +25,15 @@ public class PrimeGame {
         }
         return "yes";
     }
+
     public static String[][] game() {
         greetMsg();
         String[][] questionAnswer = new String[2][GameConst.ROUND_QTY];
         for (int z = 0; z < GameConst.ROUND_QTY; z++) {
             int rnd = PrimeGame.getRnd();
-            questionAnswer[1][z] = PrimeGame.corAns(rnd);
+            questionAnswer[1][z] = corAns(rnd);
             questionAnswer[0][z] = String.valueOf(rnd);
         }
         return questionAnswer;
     }
-
 }
