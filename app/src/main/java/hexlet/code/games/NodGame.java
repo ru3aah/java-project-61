@@ -1,9 +1,10 @@
 package hexlet.code.games;
 
 import java.util.Random;
-import hexlet.code.App.GameConst;
+import hexlet.code.Engine.GameConst;
 public class NodGame {
 
+    public static final int RND_BOUND_NOD = 50; //upper bound for RND in NOD game
     //define a class for equation components
     public static class Equation {
         private final int value1;
@@ -38,8 +39,8 @@ public class NodGame {
     //Get new val 1&2 using random generator and calculate NOD for them
     public static Equation getRnd() {
         Random random = new Random();
-        int val1 = random.nextInt(GameConst.RND_BOUND_NOD);
-        int val2 = random.nextInt(GameConst.RND_BOUND_NOD);
+        int val1 = random.nextInt(RND_BOUND_NOD);
+        int val2 = random.nextInt(RND_BOUND_NOD);
 
         //calculate NOD using Evklid's method
         int a = val1;

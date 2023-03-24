@@ -1,12 +1,12 @@
 package hexlet.code.games;
 
-import hexlet.code.App.GameConst;
-
 import java.util.Random;
-
+import hexlet.code.Engine.GameConst;
 import static java.lang.System.out;
 
 public class EvenGame {
+
+    public static final int RND_BOUND_EVEN = 100; //RND bound for Even
     public static void greetMsg() {
         out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         out.println("Question: 15");
@@ -16,7 +16,7 @@ public class EvenGame {
 
     public static int genRnd() {
         Random random = new Random();
-        return random.nextInt(GameConst.RND_BOUND_EVEN);
+        return random.nextInt(RND_BOUND_EVEN);
     }
     public static String corAns(int rnd) {
 

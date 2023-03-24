@@ -1,9 +1,16 @@
 package hexlet.code.games;
 
 import java.util.Random;
-import hexlet.code.App.GameConst;
 
+import hexlet.code.Engine.GameConst;
 public class Progression {
+
+    public static final int RND_BOUND_START_PROGR = 100; //RND bound for progression first value
+    public static final int RND_ORIGN_LEN_PROGR = 5; //RND orign for progression lenght
+    public static final int RND_BOUND_LEN_PROGR = 11; //RND bound for progression lenght
+    public static final int RND_ORIGN_STEP_PROGR = 1; //RND orign for progression step
+    public static final int RND_BOUND_STEP_PROGR = 10; //RND bound for progression step
+    public static final int RND_ORIGN_HID_POS_PROGR = 0; // RND orign for hidden position in progression
     public static class Progres {
         private final int firstVal;
         private final int len;
@@ -36,10 +43,10 @@ public class Progression {
     }
     public static Progres getRnd() {
         Random random = new Random();
-        int firstVal = random.nextInt(GameConst.RND_BOUND_START_PROGR);
-        int len = random.nextInt(GameConst.RND_ORIGN_LEN_PROGR, GameConst.RND_BOUND_LEN_PROGR);
-        int step = random.nextInt(GameConst.RND_ORIGN_STEP_PROGR, GameConst.RND_BOUND_STEP_PROGR);
-        int hidden = random.nextInt(GameConst.RND_ORIGN_HID_POS_PROGR, len - 1);
+        int firstVal = random.nextInt(RND_BOUND_START_PROGR);
+        int len = random.nextInt(RND_ORIGN_LEN_PROGR, RND_BOUND_LEN_PROGR);
+        int step = random.nextInt(RND_ORIGN_STEP_PROGR, RND_BOUND_STEP_PROGR);
+        int hidden = random.nextInt(RND_ORIGN_HID_POS_PROGR, len - 1);
         int hiddenVal = firstVal + hidden * step;
         return new Progres(firstVal, len, step, hidden, hiddenVal);
     }

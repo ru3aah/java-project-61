@@ -1,12 +1,14 @@
 package hexlet.code.games;
 
-import hexlet.code.App.GameConst;
+import hexlet.code.Engine.GameConst;
 
 import java.util.Random;
 
 import static java.lang.System.out;
 public class CalcGame {
 
+    public static final int RND_BOUND_CALC = 12; //upper bound for RND to avoid counting billions
+    public static final int SIGN_BOUND_CALC = 3; //upper bound for RND for  op sign
     // define a class for equation components
     public static class Equation {
        private final int op1;
@@ -42,9 +44,9 @@ public class CalcGame {
     //get new equation using random generator
     public static Equation getRnd() {
         Random random = new Random();
-        int op1 = random.nextInt(GameConst.RND_BOUND_CALC);
-        int op2 = random.nextInt(GameConst.RND_BOUND_CALC);
-        int operator = random.nextInt(GameConst.SIGN_BOUND_CALC);
+        int op1 = random.nextInt(RND_BOUND_CALC);
+        int op2 = random.nextInt(RND_BOUND_CALC);
+        int operator = random.nextInt(SIGN_BOUND_CALC);
         int res = 0;
         String operatorSym = null;
         //define operator

@@ -1,10 +1,15 @@
 package hexlet.code;
-import hexlet.code.App.GameConst;
+
 import java.util.Objects;
 import java.util.Scanner;
 import static java.lang.System.in;
 
 public class Engine {
+
+    public static final class GameConst {
+        public static final int ROUND_QTY = 3; //game turns limit
+
+    }
 
     public static void gameEngine(String[][] questionAnswer, String usrName) {
         Scanner ans = new Scanner(in);

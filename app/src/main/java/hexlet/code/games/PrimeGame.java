@@ -1,10 +1,13 @@
 package hexlet.code.games;
 
-import hexlet.code.App.GameConst;
-
 import java.util.Random;
+import hexlet.code.Engine.GameConst;
 
 public class PrimeGame {
+
+    public static final int RND_ORIGN_PRIME = 1; //RND RANGE beginning
+    public static final int RND_BOUND_PRIME = 1000; //RND RANGE BOUND
+
     public static void greetMsg() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         System.out.println(" ");
@@ -12,7 +15,7 @@ public class PrimeGame {
 
     public static int getRnd() {
         Random random = new Random();
-        return random.nextInt(GameConst.RND_ORIGN_PRIME, GameConst.RND_BOUND_PRIME);
+        return random.nextInt(RND_ORIGN_PRIME, RND_BOUND_PRIME);
     }
 
     public static String corAns(int rnd) {
