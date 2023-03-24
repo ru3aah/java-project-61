@@ -1,6 +1,8 @@
 package hexlet.code.games;
 
 import java.util.Random;
+
+import hexlet.code.Engine;
 import hexlet.code.Engine.GameConst;
 public class NodGame {
 
@@ -54,17 +56,17 @@ public class NodGame {
         return new Equation(val1, val2, nod);
     }
 
-    public static String[][] game() {
+    public static void game() {
         NodGame.greetMsg();
-        String[][] questionAnswer = new String[2][GameConst.ROUND_QTY];
+        Engine.QuestionAnswer[] questionAnswer = new Engine.QuestionAnswer[GameConst.ROUND_QTY];
        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
            NodGame.Equation rnd = NodGame.getRnd();
            int val1 = NodGame.Equation.getVal1(rnd);
            int val2 = NodGame.Equation.getVal2(rnd);
            int nod = NodGame.Equation.getRes(rnd);
-           questionAnswer[0][z] = val1 + " " + val2;
-           questionAnswer[1][z] = String.valueOf(nod);
+           questionAnswer[z].setAnswer(val1 + " " + val2);
+           questionAnswer[z].setQuestion(String.valueOf(nod));
        }
-        return questionAnswer;
+        Engine.gameEngine(questionAnswer);
     }
 }

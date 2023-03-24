@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 import java.util.Random;
 
+import hexlet.code.Engine;
 import hexlet.code.Engine.GameConst;
 public class Progression {
 
@@ -53,14 +54,14 @@ public class Progression {
     public static void greetMsg() {
         System.out.println("What number is missing in the progression");
     }
-    public static String[][] game() {
+    public static void game() {
         Progression.greetMsg();
-        String[][] questionAnswer = new String[2][GameConst.ROUND_QTY];
+        Engine.QuestionAnswer[] questionAnswer = new Engine.QuestionAnswer[GameConst.ROUND_QTY];
         for (int z = 0; z < GameConst.ROUND_QTY; z++) {
             Progression.Progres rnd = Progression.getRnd(); //Generate new Progression
-            questionAnswer[1][z] = String.valueOf(Progression.Progres.getHiddenVal(rnd)); //get correct Answer
+            questionAnswer[z].setAnswer(String.valueOf(Progression.Progres.getHiddenVal(rnd))); //get correct Answer
             String question = "";
-            int tmp = 0;
+            int tmp;
             for (int j = 0; j < Progression.Progres.getLen(rnd); j++) {
                 tmp = Progression.Progres.getFirstVal(rnd) + Progression.Progres.getStep(rnd) * j;
                 if (j == Progression.Progres.getHidden(rnd)) {
@@ -69,9 +70,8 @@ public class Progression {
                     question = question + tmp + " ";
                 }
             }
-            questionAnswer[0][z] = question;
+            questionAnswer[z].setQuestion(question);
         }
-        return questionAnswer;
+        Engine.gameEngine(questionAnswer);
     }
-
 }

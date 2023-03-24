@@ -31,11 +31,11 @@ public class App {
                 Cli.greeting();
                 System.out.println("Good bye!");
             }
-            case ("2") -> Engine.gameEngine(EvenGame.game(), Cli.greeting());
-            case ("3") -> Engine.gameEngine(CalcGame.game(), Cli.greeting());
-            case ("4") -> Engine.gameEngine(NodGame.game(), Cli.greeting());
-            case ("5") -> Engine.gameEngine(Progression.game(), Cli.greeting());
-            case ("6") -> Engine.gameEngine(PrimeGame.game(), Cli.greeting());
+            case ("2") -> EvenGame.game();
+            case ("3") -> CalcGame.game();
+            case ("4") -> NodGame.game();
+            case ("5") -> Progression.game();
+            case ("6") -> PrimeGame.game();
             default -> System.out.println("Good_buy!");
         }
     }

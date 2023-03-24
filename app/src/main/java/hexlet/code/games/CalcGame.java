@@ -1,5 +1,6 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
 import hexlet.code.Engine.GameConst;
 
 import java.util.Random;
@@ -47,8 +48,8 @@ public class CalcGame {
         int op1 = random.nextInt(RND_BOUND_CALC);
         int op2 = random.nextInt(RND_BOUND_CALC);
         int operator = random.nextInt(SIGN_BOUND_CALC);
-        int res = 0;
-        String operatorSym = null;
+        int res;
+        String operatorSym;
         //define operator
         switch (operator) {
             case (0) -> {
@@ -70,19 +71,19 @@ public class CalcGame {
         }
         return new Equation(op1, op2, res, operatorSym);
     }
-    public static String[][] game() {
+    public static void game() {
         CalcGame.greetMsg();
-        String[][] questionAnswer = new String[2][GameConst.ROUND_QTY];
+        Engine.QuestionAnswer[] questionAnswer = new Engine.QuestionAnswer[GameConst.ROUND_QTY];
         for (int z = 0; z < GameConst.ROUND_QTY; z++) {
             CalcGame.Equation rnd = CalcGame.getRnd();
             int op1 = CalcGame.Equation.getOp1(rnd);
             int op2 = CalcGame.Equation.getOp2(rnd);
             int res = CalcGame.Equation.getRes(rnd);
             String opSymbol = CalcGame.Equation.getOpSym(rnd);
-            questionAnswer[1][z] = String.valueOf(res);
-            questionAnswer[0][z] = op1 + opSymbol + op2;
+            questionAnswer[z].setAnswer(String.valueOf(res));
+            questionAnswer[z].setQuestion(op1 + opSymbol + op2);
         }
-        return questionAnswer;
+        Engine.gameEngine(questionAnswer);
     }
 }
 
