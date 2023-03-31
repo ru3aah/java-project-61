@@ -67,8 +67,8 @@ public class NodGame {
            int val1 = NodGame.Equation.getVal1(rnd);
            int val2 = NodGame.Equation.getVal2(rnd);
            int nod = NodGame.Equation.getRes(rnd);
-           questionAnswer[z].setAnswer(val1 + " " + val2);
-           questionAnswer[z].setQuestion(String.valueOf(nod));
+           questionAnswer[z].setQuestion(val1 + " " + val2);
+           questionAnswer[z].setAnswer(String.valueOf(nod));
        }
         Engine.gameEngine(questionAnswer);
     }
