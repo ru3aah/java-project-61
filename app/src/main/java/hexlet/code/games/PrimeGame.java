@@ -35,6 +35,9 @@ public class PrimeGame {
         greetMsg();
         Engine.QuestionAnswer[] questionAnswer = new Engine.QuestionAnswer[GameConst.ROUND_QTY];
         for (int z = 0; z < GameConst.ROUND_QTY; z++) {
+            questionAnswer[z] = new Engine.QuestionAnswer("t", "t");
+        }
+        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
             int rnd = PrimeGame.getRnd();
             questionAnswer[z].setAnswer(corAns(rnd));
             questionAnswer[z].setQuestion(String.valueOf(rnd));

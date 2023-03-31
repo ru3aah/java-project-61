@@ -59,6 +59,9 @@ public class NodGame {
     public static void game() {
         NodGame.greetMsg();
         Engine.QuestionAnswer[] questionAnswer = new Engine.QuestionAnswer[GameConst.ROUND_QTY];
+        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
+            questionAnswer[z] = new Engine.QuestionAnswer("t", "t");
+        }
        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
            NodGame.Equation rnd = NodGame.getRnd();
            int val1 = NodGame.Equation.getVal1(rnd);

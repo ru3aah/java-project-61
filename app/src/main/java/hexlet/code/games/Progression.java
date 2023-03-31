@@ -58,6 +58,9 @@ public class Progression {
         Progression.greetMsg();
         Engine.QuestionAnswer[] questionAnswer = new Engine.QuestionAnswer[GameConst.ROUND_QTY];
         for (int z = 0; z < GameConst.ROUND_QTY; z++) {
+            questionAnswer[z] = new Engine.QuestionAnswer("t", "t");
+        }
+        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
             Progression.Progres rnd = Progression.getRnd(); //Generate new Progression
             questionAnswer[z].setAnswer(String.valueOf(Progression.Progres.getHiddenVal(rnd))); //get correct Answer
             String question = "";

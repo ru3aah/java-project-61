@@ -75,6 +75,9 @@ public class CalcGame {
         CalcGame.greetMsg();
         Engine.QuestionAnswer[] questionAnswer = new Engine.QuestionAnswer[GameConst.ROUND_QTY];
         for (int z = 0; z < GameConst.ROUND_QTY; z++) {
+            questionAnswer[z] = new Engine.QuestionAnswer("t", "t");
+        }
+        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
             CalcGame.Equation rnd = CalcGame.getRnd();
             int op1 = CalcGame.Equation.getOp1(rnd);
             int op2 = CalcGame.Equation.getOp2(rnd);

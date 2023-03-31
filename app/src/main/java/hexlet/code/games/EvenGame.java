@@ -3,8 +3,9 @@ package hexlet.code.games;
 import java.util.Random;
 
 import hexlet.code.Engine.QuestionAnswer;
-import hexlet.code.Engine.GameConst;
 import hexlet.code.Engine;
+
+import static hexlet.code.Engine.GameConst.ROUND_QTY;
 import static java.lang.System.out;
 
 public class EvenGame {
@@ -25,11 +26,14 @@ public class EvenGame {
     }
     public static void game() {
         out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        out.println("Question: 15");
-        out.println("Your answer should be: no");
         out.println(" ");
-        QuestionAnswer[] questionAnswer = new QuestionAnswer[GameConst.ROUND_QTY];
-        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
+
+        QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
+        for (int z = 0; z < Engine.GameConst.ROUND_QTY; z++) {
+            questionAnswer[z] = new Engine.QuestionAnswer("t", "t");
+        }
+
+        for (int z = 0; z < ROUND_QTY; z++) {
             int rnd = EvenGame.genRnd();
             questionAnswer[z].setAnswer(EvenGame.corAns(rnd));
             questionAnswer[z].setQuestion(String.valueOf(rnd));

@@ -41,4 +41,12 @@ Thumbs.db
 /shelf/
 /workspace.xml
 
+.idea
+
+/app/.DS_Store
+/app/.idea
+/app/.gradle
+/app/build
+
+
 
