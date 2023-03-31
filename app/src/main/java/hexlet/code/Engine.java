@@ -10,7 +10,7 @@ public class Engine {
         public static final int ROUND_QTY = 3; //game turns limit
     }
 
-    public static class QuestionAnswer {
+    public static final class QuestionAnswer {
         private String question;
         private String answer;
 
