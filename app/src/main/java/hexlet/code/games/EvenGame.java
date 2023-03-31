@@ -16,13 +16,13 @@ public class EvenGame {
         Random random = new Random();
         return random.nextInt(RND_BOUND_EVEN);
     }
-    public static String corAns(int rnd) {
 
-        if ((rnd % 2) == 0) {
-            return "yes";
-        } else {
-            return "no";
-        }
+    public static Boolean isEven(int num) {
+        return  ((num % 2) == 0);
+    }
+    public static String corAns(int num) {
+
+        return isEven(num) ? "yes" : "no";
     }
     public static void game() {
         out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
