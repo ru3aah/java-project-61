@@ -48,5 +48,6 @@ Thumbs.db
 /app/.gradle
 /app/build
 
+/app/config/.DS_Store
 
-
+app/config/.DS_Store
