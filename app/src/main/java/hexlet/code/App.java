@@ -1,10 +1,7 @@
 package hexlet.code;
 
-import hexlet.code.games.CalcGame;
-import hexlet.code.games.PrimeGame;
-import hexlet.code.games.EvenGame;
-import hexlet.code.games.NodGame;
-import hexlet.code.games.Progression;
+import hexlet.code.games.*;
+import hexlet.code.games.ProgressionGame;
 
 import java.util.Scanner;
 import static java.lang.System.in;
@@ -34,7 +31,7 @@ public class App {
             case ("2") -> EvenGame.game();
             case ("3") -> CalcGame.game();
             case ("4") -> NodGame.game();
-            case ("5") -> Progression.game();
+            case ("5") -> ProgressionGame.game();
             case ("6") -> PrimeGame.game();
             default -> System.out.println("Good_buy!");
         }
