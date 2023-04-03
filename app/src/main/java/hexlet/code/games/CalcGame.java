@@ -42,8 +42,7 @@ public class CalcGame {
         }
 
         public static String getQuestion(Equation equation) {
-            String s = equation.op1 + " " + equation.opSymbol + " "
-                    + equation.op2;
+            String s = equation.op1 + equation.opSymbol + equation.op2;
             return s;
         }
 
