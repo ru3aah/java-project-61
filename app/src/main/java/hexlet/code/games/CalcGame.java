@@ -45,14 +45,17 @@ public class CalcGame {
 
             return equation.op1;
         }
+
         public static int getOp2(Equation equation) {
 
             return equation.op2;
         }
+
         public static int getRes(Equation equation) {
 
             return equation.res;
         }
+        
         public static String getOpSym(Equation equation) {
 
             return equation.opSymbol;
