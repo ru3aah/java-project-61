@@ -41,24 +41,14 @@ public class CalcGame {
             }
         }
 
-        public static int getOp1(Equation equation) {
-
-            return equation.op1;
+        public static String getQuestion(Equation equation) {
+            String s = equation.op1 + " " + equation.opSymbol + " "
+                    + equation.op2;
+            return s;
         }
 
-        public static int getOp2(Equation equation) {
-
-            return equation.op2;
-        }
-
-        public static int getRes(Equation equation) {
-
-            return equation.res;
-        }
-        
-        public static String getOpSym(Equation equation) {
-
-            return equation.opSymbol;
+        public static String getAnswer(Equation equation) {
+            return String.valueOf(equation.res);
         }
 
     }
@@ -71,11 +61,7 @@ public class CalcGame {
         QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
         for (int z = 0; z < ROUND_QTY; z++) {
             Equation rnd = new Equation();
-            int op1 = Equation.getOp1(rnd);
-            int op2 = Equation.getOp2(rnd);
-            int res = Equation.getRes(rnd);
-            String opSymbol = Equation.getOpSym(rnd);
-            questionAnswer[z] = new QuestionAnswer((op1+opSymbol+op2), String.valueOf(res));
+            questionAnswer[z] = new QuestionAnswer(Equation.getQuestion(rnd), Equation.getAnswer(rnd));
         }
         Engine.gameEngine(greetMsg(), questionAnswer);
     }
