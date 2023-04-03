@@ -12,7 +12,8 @@ public class EvenGame {
     public static final int RND_BOUND_EVEN = 100; //RND bound for Even
 
    public static String greetingMsg() {
-       return "Is the figure even?";
+       String s = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+       return s;
    }
 
     public static int genRnd() {
