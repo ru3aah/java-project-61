@@ -16,59 +16,46 @@ public class CalcGame {
         private final int res;
         private final String opSymbol;
 
-        public Equation(int opp1, int opp2, int ress, String opSymboll) {
-            this.op1 = opp1;
-            this.op2 = opp2;
-            this.res = ress;
-            this.opSymbol = opSymboll;
+        public Equation() {
+            Random random = new Random();
+            this.op1 = random.nextInt(RND_BOUND_CALC);
+            this.op2 = random.nextInt(RND_BOUND_CALC);
+            int operator = random.nextInt(SIGN_BOUND_CALC);
+            switch (operator) {
+                case (0) -> {
+                    this.opSymbol = " + ";
+                    this.res = op1 + op2;
+                }
+                case (1) -> {
+                    this.opSymbol = " - ";
+                    this.res = op1 - op2;
+                }
+                case (2) -> {
+                    this.opSymbol = " * ";
+                    this.res = op1 * op2;
+                }
+                default -> {
+                    this.opSymbol = " M ";
+                    this.res = 0;
+                }
+            }
         }
 
-        public Equation();
-
-        this.op1 = 
-
-        //Define getters for Equation class
         public static int getOp1(Equation equation) {
+
             return equation.op1;
         }
         public static int getOp2(Equation equation) {
+
             return equation.op2;
         }
         public static int getRes(Equation equation) {
+
             return equation.res;
         }
         public static String getOpSym(Equation equation) {
-            return equation.opSymbol;
-        }
 
-        //  get new equation using random generator
-        public static Equation getRnd() {
-            Random random = new Random();
-            int op1 = random.nextInt(RND_BOUND_CALC);
-            int op2 = random.nextInt(RND_BOUND_CALC);
-            int operator = random.nextInt(SIGN_BOUND_CALC);
-            int res;
-            String operatorSym;
-            //define operator
-            switch (operator) {
-                case (0) -> {
-                    operatorSym = " + ";
-                    res = op1 + op2;
-                }
-                case (1) -> {
-                    operatorSym = " - ";
-                    res = op1 - op2;
-                }
-                case (2) -> {
-                    operatorSym = " * ";
-                    res = op1 * op2;
-                }
-                default -> {
-                    operatorSym = " M ";
-                    res = 0;
-                }
-            }
-            return new Equation(op1, op2, res, operatorSym);
+            return equation.opSymbol;
         }
 
     }
@@ -80,11 +67,11 @@ public class CalcGame {
     public static void game() {
         QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
         for (int z = 0; z < ROUND_QTY; z++) {
-            CalcGame.Equation rnd = CalcGame.Equation.getRnd();
-            int op1 = CalcGame.Equation.getOp1(rnd);
-            int op2 = CalcGame.Equation.getOp2(rnd);
-            int res = CalcGame.Equation.getRes(rnd);
-            String opSymbol = CalcGame.Equation.getOpSym(rnd);
+            Equation rnd = new Equation();
+            int op1 = Equation.getOp1(rnd);
+            int op2 = Equation.getOp2(rnd);
+            int res = Equation.getRes(rnd);
+            String opSymbol = Equation.getOpSym(rnd);
             questionAnswer[z] = new QuestionAnswer((op1+opSymbol+op2), String.valueOf(res));
         }
         Engine.gameEngine(greetMsg(), questionAnswer);
