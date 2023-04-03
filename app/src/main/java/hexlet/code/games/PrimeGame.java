@@ -33,7 +33,6 @@ public class PrimeGame {
     }
 
     public static void game() {
-        greetMsg();
         QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
 
         for (int z = 0; z < ROUND_QTY; z++) {

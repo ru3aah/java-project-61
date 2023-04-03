@@ -10,6 +10,7 @@ import static hexlet.code.Engine.ROUND_QTY;
 public class NodGame {
 
     public static final int RND_BOUND_NOD = 50; //upper bound for RND in NOD game
+
     //define a class for equation components
     public static class Equation {
         private final int value1;
@@ -60,7 +61,7 @@ public class NodGame {
     }
 
     public static void game() {
-        NodGame.greetMsg();
+        
         QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
 
        for (int z = 0; z < ROUND_QTY; z++) {
