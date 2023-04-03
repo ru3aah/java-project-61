@@ -2,27 +2,20 @@ package hexlet.code;
 
 public class QuestionAnswer {
 
-        private String question;
-        private String answer;
+        private final String question;
+        private final String answer;
 
-        public QuestionAnswer(String question, String answer) {
-            this.question = question;
-            this.answer = answer;
+        public QuestionAnswer(String questionn, String answerr) {
+            this.question = questionn;
+            this.answer = answerr;
         }
 
         public String getQuestion() {
             return question;
         }
 
-        public void setQuestion(String question) {
-            this.question = question;
-        }
-
         public String getAnswer() {
             return answer;
         }
 
-        public void setAnswer(String answer) {
-            this.answer = answer;
-        }
 }
