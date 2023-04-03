@@ -3,16 +3,17 @@ package hexlet.code.games;
 import java.util.Random;
 
 import hexlet.code.Engine;
-import hexlet.code.Engine.GameConst;
+import hexlet.code.QuestionAnswer;
+
+import static hexlet.code.Engine.ROUND_QTY;
 
 public class PrimeGame {
 
     public static final int RND_ORIGN_PRIME = 1; //RND RANGE beginning
     public static final int RND_BOUND_PRIME = 1000; //RND RANGE BOUND
 
-    public static void greetMsg() {
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        System.out.println(" ");
+    public static String greetMsg() {
+        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
     public static int getRnd() {
@@ -33,15 +34,12 @@ public class PrimeGame {
 
     public static void game() {
         greetMsg();
-        Engine.QuestionAnswer[] questionAnswer = new Engine.QuestionAnswer[GameConst.ROUND_QTY];
-        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
-            questionAnswer[z] = new Engine.QuestionAnswer("t", "t");
-        }
-        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
+        QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
+
+        for (int z = 0; z < ROUND_QTY; z++) {
             int rnd = PrimeGame.getRnd();
-            questionAnswer[z].setAnswer(corAns(rnd));
-            questionAnswer[z].setQuestion(String.valueOf(rnd));
+            questionAnswer[z] = new QuestionAnswer(String.valueOf(rnd), corAns(rnd));
         }
-        Engine.gameEngine(questionAnswer);
+        Engine.gameEngine(greetMsg(), questionAnswer);
     }
 }

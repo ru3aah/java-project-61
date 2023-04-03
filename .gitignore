@@ -52,3 +52,6 @@ Thumbs.db
 
 app/config/.DS_Store
 /app/src/main/java/hexlet/code/games/.DS_Store
+app/build.gradle
+
+

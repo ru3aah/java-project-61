@@ -1,10 +1,11 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Engine.GameConst;
+import hexlet.code.QuestionAnswer;
 
 import java.util.Random;
 
+import static hexlet.code.Engine.ROUND_QTY;
 import static java.lang.System.out;
 public class CalcGame {
 
@@ -38,8 +39,8 @@ public class CalcGame {
         }
     }
 //Greeting for Calculator Game
-    public static void greetMsg() {
-        out.println("What is the result of the expression?");
+    public static String greetMsg() {
+        return "What is the result of the expression?";
     }
 
     //get new equation using random generator
@@ -72,21 +73,16 @@ public class CalcGame {
         return new Equation(op1, op2, res, operatorSym);
     }
     public static void game() {
-        CalcGame.greetMsg();
-        Engine.QuestionAnswer[] questionAnswer = new Engine.QuestionAnswer[GameConst.ROUND_QTY];
-        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
-            questionAnswer[z] = new Engine.QuestionAnswer("t", "t");
-        }
-        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
+        QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
+        for (int z = 0; z < ROUND_QTY; z++) {
             CalcGame.Equation rnd = CalcGame.getRnd();
             int op1 = CalcGame.Equation.getOp1(rnd);
             int op2 = CalcGame.Equation.getOp2(rnd);
             int res = CalcGame.Equation.getRes(rnd);
             String opSymbol = CalcGame.Equation.getOpSym(rnd);
-            questionAnswer[z].setAnswer(String.valueOf(res));
-            questionAnswer[z].setQuestion(op1 + opSymbol + op2);
+            questionAnswer[z] = new QuestionAnswer((op1+opSymbol+op2), String.valueOf(res));
         }
-        Engine.gameEngine(questionAnswer);
+        Engine.gameEngine(greetMsg(), questionAnswer);
     }
 }
 

@@ -1,9 +1,12 @@
 package hexlet.code.games;
 
 import java.util.Random;
+import hexlet.code.QuestionAnswer;
 
 import hexlet.code.Engine;
-import hexlet.code.Engine.GameConst;
+
+import static hexlet.code.Engine.ROUND_QTY;
+
 public class NodGame {
 
     public static final int RND_BOUND_NOD = 50; //upper bound for RND in NOD game
@@ -34,8 +37,8 @@ public class NodGame {
     }
 
     //Greeting for Nod game
-    public static void greetMsg() {
-        System.out.println("Find the greatest common divisor of given numbers.");
+    public static String greetMsg() {
+        return "Find the greatest common divisor of given numbers.";
     }
 
     //Get new val 1&2 using random generator and calculate NOD for them
@@ -58,18 +61,15 @@ public class NodGame {
 
     public static void game() {
         NodGame.greetMsg();
-        Engine.QuestionAnswer[] questionAnswer = new Engine.QuestionAnswer[GameConst.ROUND_QTY];
-        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
-            questionAnswer[z] = new Engine.QuestionAnswer("t", "t");
-        }
-       for (int z = 0; z < GameConst.ROUND_QTY; z++) {
+        QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
+
+       for (int z = 0; z < ROUND_QTY; z++) {
            NodGame.Equation rnd = NodGame.getRnd();
            int val1 = NodGame.Equation.getVal1(rnd);
            int val2 = NodGame.Equation.getVal2(rnd);
            int nod = NodGame.Equation.getRes(rnd);
-           questionAnswer[z].setQuestion(val1 + " " + val2);
-           questionAnswer[z].setAnswer(String.valueOf(nod));
+           questionAnswer[z] = new QuestionAnswer((val1 + " " + val2), String.valueOf(nod));
        }
-        Engine.gameEngine(questionAnswer);
+        Engine.gameEngine(greetMsg(), questionAnswer);
     }
 }

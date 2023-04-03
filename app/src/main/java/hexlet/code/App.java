@@ -12,7 +12,6 @@ import static java.lang.System.out;
 
 public class App {
 
-
     public static void main(String[] args) {
         Scanner gameNum = new Scanner(in);
         out.println("Please Enter the game number and press Enter,");
@@ -29,6 +28,7 @@ public class App {
             case ("0") -> System.out.println("Good buy!");
             case ("1") -> {
                 Cli.greeting();
+                Cli.getUsrName();
                 System.out.println("Good bye!");
             }
             case ("2") -> EvenGame.game();

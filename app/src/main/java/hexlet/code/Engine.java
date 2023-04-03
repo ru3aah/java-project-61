@@ -6,41 +6,14 @@ import static java.lang.System.in;
 
 public class Engine {
 
-    public static final class GameConst {
-        public static final int ROUND_QTY = 3; //game turns limit
-    }
+    public static final int ROUND_QTY = 3; //game turns limit
 
-    public static final class QuestionAnswer {
-        private String question;
-        private String answer;
-
-        public QuestionAnswer(String questionn, String answerr) {
-            this.question = questionn;
-            this.answer = answerr;
-        }
-
-        public String getQuestion() {
-
-            return question;
-        }
-
-        public void setQuestion(String questionn) {
-
-            this.question = questionn;
-        }
-
-        public String getAnswer() {
-            return answer;
-        }
-
-        public void setAnswer(String answerr) {
-            this.answer = answerr;
-        }
-    }
-    public static void gameEngine(QuestionAnswer[] questionAnswer) {
-        String usrName = Cli.greeting();
+    public static void gameEngine(String greeting, QuestionAnswer[] questionAnswer) {
+        Cli.greeting();
+        String usrName = Cli.getUsrName();
+        System.out.println(greeting);
         Scanner ans = new Scanner(in);
-        for (int i = 0; i < GameConst.ROUND_QTY; i++) {
+        for (int i = 0; i < ROUND_QTY; i++) {
             System.out.println("Question: " + questionAnswer[i].getQuestion());
             System.out.print("Answer: ");
             String usrAns = ans.next();

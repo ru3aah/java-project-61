@@ -1,9 +1,12 @@
 package hexlet.code.games;
 
 import java.util.Random;
+import hexlet.code.QuestionAnswer;
 
 import hexlet.code.Engine;
-import hexlet.code.Engine.GameConst;
+
+import static hexlet.code.Engine.ROUND_QTY;
+
 public class Progression {
 
     public static final int RND_BOUND_START_PROGR = 100; //RND bound for progression first value
@@ -51,18 +54,16 @@ public class Progression {
         int hiddenVal = firstVal + hidden * step;
         return new Progres(firstVal, len, step, hidden, hiddenVal);
     }
-    public static void greetMsg() {
-        System.out.println("What number is missing in the progression");
+    public static String greetMsg() {
+        return "What number is missing in the progression";
     }
     public static void game() {
         Progression.greetMsg();
-        Engine.QuestionAnswer[] questionAnswer = new Engine.QuestionAnswer[GameConst.ROUND_QTY];
-        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
-            questionAnswer[z] = new Engine.QuestionAnswer("t", "t");
-        }
-        for (int z = 0; z < GameConst.ROUND_QTY; z++) {
+        QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
+
+        for (int z = 0; z < ROUND_QTY; z++) {
             Progression.Progres rnd = Progression.getRnd(); //Generate new Progression
-            questionAnswer[z].setAnswer(String.valueOf(Progression.Progres.getHiddenVal(rnd))); //get correct Answer
+
             String question = "";
             int tmp;
             for (int j = 0; j < Progression.Progres.getLen(rnd); j++) {
@@ -73,8 +74,8 @@ public class Progression {
                     question = question + tmp + " ";
                 }
             }
-            questionAnswer[z].setQuestion(question);
+            questionAnswer[z] = new QuestionAnswer(question, String.valueOf(Progression.Progres.getHiddenVal(rnd)) );
         }
-        Engine.gameEngine(questionAnswer);
+        Engine.gameEngine(greetMsg(), questionAnswer);
     }
 }
