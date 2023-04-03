@@ -33,7 +33,7 @@ public class EvenGame {
         QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
         for (int z = 0; z < ROUND_QTY; z++) {
             int rnd = EvenGame.genRnd();
-            questionAnswer[z] = new QuestionAnswer( String.valueOf(rnd), EvenGame.corAns(rnd));
+            questionAnswer[z] = new QuestionAnswer(String.valueOf(rnd), EvenGame.corAns(rnd));
         }
         Engine.gameEngine(greetingMsg(), questionAnswer);
     }

@@ -35,8 +35,7 @@ public class PrimeGame {
     public static String corAns(boolean ifPrime) {
         if (ifPrime) {
             return "yes";
-        }
-        else {
+        } else {
             return "no";
         }
     }

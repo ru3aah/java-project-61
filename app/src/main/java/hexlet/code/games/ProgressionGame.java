@@ -22,9 +22,6 @@ public class ProgressionGame {
         private final int hidden;
         private final int hiddenVal;
 
-        /**
-         * constructor for Progression where random values filled in
-         */
         public Progression() {
             Random random = new Random();
             this.firstVal = random.nextInt(RND_BOUND_START_PROGR);
@@ -60,7 +57,8 @@ public class ProgressionGame {
 
         for (int z = 0; z < ROUND_QTY; z++) {
             ProgressionGame.Progression rnd = new Progression(); //Generate new Progression
-            questionAnswer[z] = new QuestionAnswer(Progression.getQuestion(rnd), String.valueOf(Progression.getHiddenVal(rnd)));
+            questionAnswer[z] =
+                    new QuestionAnswer(Progression.getQuestion(rnd), String.valueOf(Progression.getHiddenVal(rnd)));
         }
         Engine.gameEngine(greetMsg(), questionAnswer);
     }
