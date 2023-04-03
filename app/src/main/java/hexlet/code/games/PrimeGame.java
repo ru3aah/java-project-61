@@ -21,15 +21,24 @@ public class PrimeGame {
         return random.nextInt(RND_ORIGN_PRIME, RND_BOUND_PRIME);
     }
 
-    public static String corAns(int rnd) {
+    public static boolean ifPrime(int val) {
         int tmp;
-        for (int j = 2; j <= rnd / 2;  j++) {
-            tmp = rnd % j;
+        for (int j = 2; j <= val / 2;  j++) {
+            tmp = val % j;
             if (tmp == 0) {
-                return "no";
+                return false;
             }
         }
-        return "yes";
+        return true;
+    }
+
+    public static String corAns(boolean ifPrime) {
+        if (ifPrime) {
+            return "yes";
+        }
+        else {
+            return "no";
+        }
     }
 
     public static void game() {
@@ -37,7 +46,7 @@ public class PrimeGame {
 
         for (int z = 0; z < ROUND_QTY; z++) {
             int rnd = PrimeGame.getRnd();
-            questionAnswer[z] = new QuestionAnswer(String.valueOf(rnd), corAns(rnd));
+            questionAnswer[z] = new QuestionAnswer(String.valueOf(rnd), corAns(ifPrime(rnd)));
         }
         Engine.gameEngine(greetMsg(), questionAnswer);
     }
