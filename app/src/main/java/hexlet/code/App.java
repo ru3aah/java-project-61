@@ -14,7 +14,7 @@ public class App {
 
     public static void main(String[] args) {
         Scanner gameNum = new Scanner(in);
-        out.println("Please Enter the game number and press Enter,");
+        out.println("Please Enter the startGame number and press Enter,");
         out.println("1 - Greet");
         out.println("2 - Even");
         out.println("3 - Calc");
@@ -31,12 +31,13 @@ public class App {
                 Cli.getUsrName();
                 System.out.println("Good bye!");
             }
-            case ("2") -> EvenGame.game();
-            case ("3") -> CalcGame.game();
-            case ("4") -> NodGame.game();
-            case ("5") -> ProgressionGame.game();
-            case ("6") -> PrimeGame.game();
-            default -> System.out.println("Good_buy!");
+            case ("2") -> EvenGame.startGame();
+            case ("3") -> CalcGame.startGame();
+            case ("4") -> NodGame.startGame();
+            case ("5") -> ProgressionGame.startGame();
+            case ("6") -> PrimeGame.startGame();
+            default -> System.out.println("Sorry, something went wrong, " +
+                    "shit happens, try again.");
         }
     }
 }

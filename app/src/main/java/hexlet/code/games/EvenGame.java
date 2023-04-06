@@ -29,7 +29,7 @@ public class EvenGame {
         return isEven(num) ? "yes" : "no";
     }
 
-    public static void game() {
+    public static void startGame() {
         QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
         for (int z = 0; z < ROUND_QTY; z++) {
             int rnd = EvenGame.genRnd();

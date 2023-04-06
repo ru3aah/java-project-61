@@ -35,8 +35,8 @@ public class CalcGame {
                     this.res = op1 * op2;
                 }
                 default -> {
-                    this.opSymbol = " M ";
-                    this.res = 0;
+                    System.out.print("Something went wrong. Eject! Eject! Eject!");
+                    System.exit(1);
                 }
             }
         }
@@ -56,7 +56,7 @@ public class CalcGame {
         return "What is the result of the expression?";
     }
 
-    public static void game() {
+    public static void startGame() {
         QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
         for (int z = 0; z < ROUND_QTY; z++) {
             Equation rnd = new Equation();

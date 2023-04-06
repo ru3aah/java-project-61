@@ -9,7 +9,7 @@ import static hexlet.code.Engine.ROUND_QTY;
 
 public class NodGame {
 
-    public static final int RND_BOUND_NOD = 50; //upper bound for RND in NOD game
+    public static final int RND_BOUND_NOD = 50; //upper bound for RND in NOD startGame
 
     public static String greetMsg() {
         return "Find the greatest common divisor of given numbers.";
@@ -25,7 +25,7 @@ public class NodGame {
         return val1;
     }
 
-    public static void game() {
+    public static void startGame() {
         QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
         Random rnd = new Random();
        for (int z = 0; z < ROUND_QTY; z++) {

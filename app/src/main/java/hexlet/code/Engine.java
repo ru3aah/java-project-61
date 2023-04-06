@@ -6,7 +6,7 @@ import static java.lang.System.in;
 
 public class Engine {
 
-    public static final int ROUND_QTY = 3; //game turns limit
+    public static final int ROUND_QTY = 3; //startGame turns limit
 
     public static void gameEngine(String greeting, QuestionAnswer[] questionAnswer) {
         Cli.greeting();

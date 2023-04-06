@@ -52,7 +52,7 @@ public class ProgressionGame {
     public static String greetMsg() {
         return "What number is missing in the progression";
     }
-    public static void game() {
+    public static void startGame() {
         QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
 
         for (int z = 0; z < ROUND_QTY; z++) {
