@@ -11,7 +11,7 @@ public class NodGame {
 
     public static final int RND_BOUND_NOD = 50; //upper bound for RND in NOD startGame
 
-    public static String greetMsg() {
+    public static String taskMsg() {
         return "Find the greatest common divisor of given numbers.";
     }
 
@@ -35,6 +35,6 @@ public class NodGame {
            questionAnswer[z] = new QuestionAnswer((val1 + " " + val2),
                    String.valueOf(nod));
        }
-        Engine.handleGame(greetMsg(), questionAnswer);
+        Engine.handleGame(taskMsg(), questionAnswer);
     }
 }

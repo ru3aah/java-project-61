@@ -12,7 +12,7 @@ public class PrimeGame {
     public static final int RND_ORIGN_PRIME = 1; //RND RANGE beginning
     public static final int RND_BOUND_PRIME = 1000; //RND RANGE BOUND
 
-    public static String greetMsg() {
+    public static String taskMsg() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
@@ -47,6 +47,6 @@ public class PrimeGame {
             int rnd = PrimeGame.getRnd();
             questionAnswer[z] = new QuestionAnswer(String.valueOf(rnd), corAns(ifPrime(rnd)));
         }
-        Engine.handleGame(greetMsg(), questionAnswer);
+        Engine.handleGame(taskMsg(), questionAnswer);
     }
 }

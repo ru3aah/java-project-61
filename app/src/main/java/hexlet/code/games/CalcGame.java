@@ -52,7 +52,7 @@ public class CalcGame {
 
     }
 
-    public static String greetMsg() {
+    public static String taskMsg() {
         return "What is the result of the expression?";
     }
 
@@ -62,7 +62,7 @@ public class CalcGame {
             Equation rnd = new Equation();
             questionAnswer[z] = new QuestionAnswer(Equation.getQuestion(rnd), Equation.getAnswer(rnd));
         }
-        Engine.handleGame(greetMsg(), questionAnswer);
+        Engine.handleGame(taskMsg(), questionAnswer);
     }
 }
 

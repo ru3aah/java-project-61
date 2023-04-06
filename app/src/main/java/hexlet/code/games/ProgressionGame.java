@@ -49,7 +49,7 @@ public class ProgressionGame {
         }
     }
 
-    public static String greetMsg() {
+    public static String taskMsg() {
         return "What number is missing in the progression";
     }
     public static void startGame() {
@@ -60,6 +60,6 @@ public class ProgressionGame {
             questionAnswer[z] =
                     new QuestionAnswer(Progression.getQuestion(rnd), String.valueOf(Progression.getHiddenVal(rnd)));
         }
-        Engine.handleGame(greetMsg(), questionAnswer);
+        Engine.handleGame(taskMsg(), questionAnswer);
     }
 }

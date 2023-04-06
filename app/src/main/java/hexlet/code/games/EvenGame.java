@@ -11,7 +11,7 @@ public class EvenGame {
 
     public static final int RND_BOUND_EVEN = 100; //RND bound for Even
 
-   public static String greetingMsg() {
+   public static String taskMsg() {
        String s = "Answer 'yes' if the number is even, otherwise answer 'no'.";
        return s;
    }
@@ -35,7 +35,7 @@ public class EvenGame {
             int rnd = EvenGame.genRnd();
             questionAnswer[z] = new QuestionAnswer(String.valueOf(rnd), EvenGame.corAns(rnd));
         }
-        Engine.handleGame(greetingMsg(), questionAnswer);
+        Engine.handleGame(taskMsg(), questionAnswer);
     }
 }
 
