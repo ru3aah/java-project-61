@@ -32,17 +32,17 @@ public class ProgressionGame {
         }
 
         public static String getQuestion(Progression val) {
-            String question = "";
+            StringBuilder question = new StringBuilder("");
             int tmp;
             for (int j = 0; j < val.len; j++) {
                 tmp = val.firstVal + val.step * j;
                 if (j == val.hidden) {
-                    question = question + ".. ";
+                    question.append(".. ");
                 } else {
-                    question = question + tmp + " ";
+                    question.append(tmp + " ");
                 }
             }
-            return question;
+            return String.valueOf(question);
         }
         public static int getHiddenVal(Progression progres) {
             return progres.hiddenVal;
