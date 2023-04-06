@@ -36,8 +36,8 @@ public class App {
             case ("4") -> NodGame.startGame();
             case ("5") -> ProgressionGame.startGame();
             case ("6") -> PrimeGame.startGame();
-            default -> System.out.println("Sorry, something went wrong, " +
-                    "shit happens, try again.");
+            default -> System.out.println("Sorry, something went wrong, "
+                    + "shit happens, try again.");
         }
     }
 }

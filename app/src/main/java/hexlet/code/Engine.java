@@ -10,9 +10,9 @@ public class Engine {
     private static String greeting;
     private static QuestionAnswer[] questionAnswer;
 
-    public static void handleGame(String greeting, QuestionAnswer[] questionAnswer) {
-        Engine.greeting = greeting;
-        Engine.questionAnswer = questionAnswer;
+    public static void handleGame(String greeting_, QuestionAnswer[] questionAnswer_) {
+        Engine.greeting = greeting_;
+        Engine.questionAnswer = questionAnswer_;
         Cli.greeting();
         String usrName = Cli.getUsrName();
         System.out.println(greeting);
