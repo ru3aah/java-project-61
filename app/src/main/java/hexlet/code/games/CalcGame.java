@@ -13,8 +13,8 @@ public class CalcGame {
     public static class Equation {
         private final int op1;
         private final int op2;
-        private final int res;
-        private final String opSymbol;
+        private int res;
+        private String opSymbol;
 
         public Equation() {
             Random random = new Random();
@@ -62,7 +62,7 @@ public class CalcGame {
             Equation rnd = new Equation();
             questionAnswer[z] = new QuestionAnswer(Equation.getQuestion(rnd), Equation.getAnswer(rnd));
         }
-        Engine.gameEngine(greetMsg(), questionAnswer);
+        Engine.handleGame(greetMsg(), questionAnswer);
     }
 }
 

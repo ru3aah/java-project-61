@@ -35,6 +35,6 @@ public class NodGame {
            questionAnswer[z] = new QuestionAnswer((val1 + " " + val2),
                    String.valueOf(nod));
        }
-        Engine.gameEngine(greetMsg(), questionAnswer);
+        Engine.handleGame(greetMsg(), questionAnswer);
     }
 }

@@ -47,6 +47,6 @@ public class PrimeGame {
             int rnd = PrimeGame.getRnd();
             questionAnswer[z] = new QuestionAnswer(String.valueOf(rnd), corAns(ifPrime(rnd)));
         }
-        Engine.gameEngine(greetMsg(), questionAnswer);
+        Engine.handleGame(greetMsg(), questionAnswer);
     }
 }

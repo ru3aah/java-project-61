@@ -35,7 +35,7 @@ public class EvenGame {
             int rnd = EvenGame.genRnd();
             questionAnswer[z] = new QuestionAnswer(String.valueOf(rnd), EvenGame.corAns(rnd));
         }
-        Engine.gameEngine(greetingMsg(), questionAnswer);
+        Engine.handleGame(greetingMsg(), questionAnswer);
     }
 }
 

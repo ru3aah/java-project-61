@@ -60,6 +60,6 @@ public class ProgressionGame {
             questionAnswer[z] =
                     new QuestionAnswer(Progression.getQuestion(rnd), String.valueOf(Progression.getHiddenVal(rnd)));
         }
-        Engine.gameEngine(greetMsg(), questionAnswer);
+        Engine.handleGame(greetMsg(), questionAnswer);
     }
 }

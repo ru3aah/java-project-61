@@ -7,8 +7,12 @@ import static java.lang.System.in;
 public class Engine {
 
     public static final int ROUND_QTY = 3; //startGame turns limit
+    private static String greeting;
+    private static QuestionAnswer[] questionAnswer;
 
-    public static void gameEngine(String greeting, QuestionAnswer[] questionAnswer) {
+    public static void handleGame(String greeting, QuestionAnswer[] questionAnswer) {
+        Engine.greeting = greeting;
+        Engine.questionAnswer = questionAnswer;
         Cli.greeting();
         String usrName = Cli.getUsrName();
         System.out.println(greeting);
