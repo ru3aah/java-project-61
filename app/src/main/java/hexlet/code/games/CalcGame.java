@@ -41,18 +41,16 @@ public class CalcGame {
                     System.exit(1);
                 }
             }
+
         }
 
-        public String getQuestion(Equation equation) {
-            String s = equation.op1 + equation.opSymbol + equation.op2;
-            return s;
+        public String getQuestion() {
+            return this.op1 + this.opSymbol + this.op2;
         }
 
-        public static String getAnswer(Equation equation) {
-            return String.valueOf(equation.res);
+        public  String getAnswer() {
+            return String.valueOf(this.res);
         }
-
-
     }
 
     public static String taskMsg() {
@@ -63,8 +61,8 @@ public class CalcGame {
         QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
         for (int z = 0; z < ROUND_QTY; z++) {
             Equation rnd = new Equation();
-            questionAnswer[z] = new QuestionAnswer(Equation.getQuestion(rnd),
-                    Equation.getAnswer(rnd));
+            questionAnswer[z] = new QuestionAnswer(rnd.getQuestion(),
+                    rnd.getAnswer());
         }
         Engine.handleGame(taskMsg(), questionAnswer);
     }
