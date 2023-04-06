@@ -9,6 +9,8 @@ public class CalcGame {
 
     public static final int RND_BOUND_CALC = 12; //upper bound for RND to avoid counting billions
     public static final int SIGN_BOUND_CALC = 3; //upper bound for RND for op sign
+
+
     // define a class for equation components
     public static class Equation {
         private final int op1;
@@ -41,7 +43,7 @@ public class CalcGame {
             }
         }
 
-        public static String getQuestion(Equation equation) {
+        public String getQuestion(Equation equation) {
             String s = equation.op1 + equation.opSymbol + equation.op2;
             return s;
         }
@@ -49,6 +51,7 @@ public class CalcGame {
         public static String getAnswer(Equation equation) {
             return String.valueOf(equation.res);
         }
+
 
     }
 
@@ -60,7 +63,8 @@ public class CalcGame {
         QuestionAnswer[] questionAnswer = new QuestionAnswer[ROUND_QTY];
         for (int z = 0; z < ROUND_QTY; z++) {
             Equation rnd = new Equation();
-            questionAnswer[z] = new QuestionAnswer(Equation.getQuestion(rnd), Equation.getAnswer(rnd));
+            questionAnswer[z] = new QuestionAnswer(Equation.getQuestion(rnd),
+                    Equation.getAnswer(rnd));
         }
         Engine.handleGame(taskMsg(), questionAnswer);
     }

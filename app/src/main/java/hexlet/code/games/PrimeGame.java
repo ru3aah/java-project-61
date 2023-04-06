@@ -22,10 +22,8 @@ public class PrimeGame {
     }
 
     public static boolean ifPrime(int val) {
-        int tmp;
         for (int j = 2; j <= val / 2;  j++) {
-            tmp = val % j;
-            if (tmp == 0) {
+            if (val == 0) {
                 return false;
             }
         }
