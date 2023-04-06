@@ -44,11 +44,11 @@ public class CalcGame {
 
         }
 
-        public String getEquationAsString() {
+        public final String getEquationAsString() {
             return this.op1 + this.opSymbol + this.op2;
         }
 
-        public  String getEquationResult() {
+        public  final String getEquationResult() {
             return String.valueOf(this.res);
         }
     }
