@@ -31,12 +31,12 @@ public class ProgressionGame {
             this.hiddenVal = firstVal + hidden * step;
         }
 
-        public static String getQuestion(Progression val) {
+        public String getStringOfProgression() {
             StringBuilder question = new StringBuilder("");
             int tmp;
-            for (int j = 0; j < val.len; j++) {
-                tmp = val.firstVal + val.step * j;
-                if (j == val.hidden) {
+            for (int j = 0; j < this.len; j++) {
+                tmp = this.firstVal + this.step * j;
+                if (j == this.hidden) {
                     question.append(".. ");
                 } else {
                     question.append(tmp + " ");
@@ -44,8 +44,8 @@ public class ProgressionGame {
             }
             return String.valueOf(question);
         }
-        public static int getHiddenVal(Progression progres) {
-            return progres.hiddenVal;
+        public int getHiddenVal() {
+            return this.hiddenVal;
         }
     }
 
@@ -58,7 +58,7 @@ public class ProgressionGame {
         for (int z = 0; z < ROUND_QTY; z++) {
             ProgressionGame.Progression rnd = new Progression(); //Generate new Progression
             questionAnswer[z] =
-                    new QuestionAnswer(Progression.getQuestion(rnd), String.valueOf(Progression.getHiddenVal(rnd)));
+                    new QuestionAnswer(rnd.getStringOfProgression(), String.valueOf(rnd.getHiddenVal()));
         }
         Engine.handleGame(taskMsg(), questionAnswer);
     }
