@@ -9,8 +9,8 @@ import static hexlet.code.Engine.ROUND_QTY;
 
 public class PrimeGame {
 
-    public static final int RND_ORIGN_PRIME = 1; //RND RANGE beginning
-    public static final int RND_BOUND_PRIME = 1000; //RND RANGE BOUND
+    public static final int RND_ORIGN_PRIME = 0; //RND RANGE beginning
+    public static final int RND_BOUND_PRIME = 50; //RND RANGE BOUND
 
     public static String taskMsg() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -22,7 +22,13 @@ public class PrimeGame {
     }
 
     public static boolean ifPrime(int val) {
-        for (int j = 2; j <= val / 2;  j++) {
+        if (val == 2) {
+            return true;
+        }
+        if (val <=1) {
+            return false;
+        }
+        for (int j = 3; j <= val / 2;  j++) {
             if (val % j == 0) {
                 return false;
             }
