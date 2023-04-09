@@ -25,7 +25,7 @@ public class PrimeGame {
         if (val == 2) {
             return true;
         }
-        if (val <=1 ) {
+        if (val <= 1) {
             return false;
         }
         for (int j = 2; j <= val / 2;  j++) {
