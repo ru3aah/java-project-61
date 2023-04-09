@@ -39,7 +39,8 @@ public class ProgressionGame {
                 if (j == this.hidden) {
                     question.append(".. ");
                 } else {
-                    question.append(tmp + " ");
+                    question.append(tmp);
+                    question.append(" ");
                 }
             }
             return String.valueOf(question);
